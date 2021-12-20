@@ -3,7 +3,7 @@
         <h1>BOOLFLIX</h1>
         <div class="search">
             <input type="text" placeholder="Search movie or TvShow" v-model="userSearch" @keyup.enter="getMovies(), getTv()">
-            <button>SEARCH</button>
+            <button @click="getMovies(), getTv()">SEARCH</button>
         </div>
     </header>
 </template>
@@ -12,6 +12,26 @@
 import axios from "axios"
 export default {
     name: 'Header',
+    data() {
+        return {
+            userSearch: '',
+            movieApi: '',
+            tvApi: '',
+            movieList: [],
+            tvList: []
+        }
+    },
+    methods: {
+        getMovies() {
+            this.movieApi = 'https://api.themoviedb.org/3/search/movie?api_key=98c4174e24d68a6f3bc6d7edc12c31ad&language=it-IT&query='+ this.userSearch
+            axios
+            .get(this.movieApi)
+            .then((result) => {
+                this.movieList = result.data.results
+                this.$emit('movieSearch', this.movieList)
+                return this.movieList
+            })
+        },
 }
 </script>
 
