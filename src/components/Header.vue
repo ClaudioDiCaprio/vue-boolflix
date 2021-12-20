@@ -32,6 +32,17 @@ export default {
                 return this.movieList
             })
         },
+        getTv() {
+            this.tvApi = 'https://api.themoviedb.org/3/search/tv?api_key=98c4174e24d68a6f3bc6d7edc12c31ad&language=it-IT&query='+ this.userSearch
+            axios
+            .get(this.tvApi)
+            .then((result) => {
+                this.tvList = result.data.results
+                this.$emit('tvSearch', this.tvList)
+                return this.tvList
+            })
+        }
+    }
 }
 </script>
 
