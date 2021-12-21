@@ -98,6 +98,12 @@ export default {
                 color: blue;
                 font-weight: bolder;
             }
+             .fa-star{
+                color: gold;
+            }
+            .ciccio{
+                color: white;
+            }
             
         }
     }
