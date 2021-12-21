@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-   <Header @movieSearch="movieResult" @tvSearch="tvResult"/>
-   <MainCont :movieRes="movieList" :tvRes="tvList"/>
+    <Header @movieSearch="movieResult" @tvSearch="tvResult"/>
+    <ProgramGuide :movieRes="movieList" :tvRes="tvList"/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import ProgramGuide from './components/ProgramGuide.vue'
+
+
 export default {
   name: 'App',
   components: {
@@ -32,8 +34,8 @@ export default {
 </script>
 
 <style lang="scss">
-
- * {
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
