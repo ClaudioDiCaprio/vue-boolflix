@@ -5,9 +5,9 @@
             <h3>{{movie.title}}</h3>
             <ul>
                 <li><span class="movie-info">Title:</span> {{movie.original_title}}</li>
-                <li v-if="movie.original_language === 'en'"><span class="movie-info">Language:</span> <img src="../assets/flag-united-kingdom.png" :alt="info.original_language"></li>
-                <li v-else-if="movie.original_language === 'it'"><span class="movie-info">Language:</span> <img src="../assets/flag-italy.png" :alt="info.original_language"></li>
-                <li v-else><span class="movie-info">Foreing Languages</span> <img src="../assets/white-flag.png" alt="white_flag"></li>
+                <li v-if="movie.original_language === 'en'"><span class="movie-info">Language:</span> <img src="../assets/flag-united-kingdom.png" alt=""></li>
+                <li v-else-if="movie.original_language === 'it'"><span class="movie-info">Language:</span> <img src="../assets/flag-italy.png" alt=""></li>
+                <li v-else><span class="movie-info">Foreing Languages</span> <img src="../assets/white-flag.png" alt=""></li>
                 <li><span class="movie-info">Note:</span><i class="fas fa-star" v-for="i in getScore()" :key="'star'+i"></i><i class="far fa-star ciccio" v-for="i in getEmptyStar()" :key="'emptystar'+i"></i></li>
             </ul>
             <p v-if="movie.overview.length > 0">{{movie.overview.slice(0, 300)}}...</p>
