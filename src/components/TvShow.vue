@@ -6,7 +6,7 @@
             <ul>
                 <li><span class="tvshow-info">Title:</span> {{tvshow.original_name}}</li>
                 <li v-if="tvshow.original_language === 'en'"><span class="tvshow-info">Language:</span> <img src="../assets/flag-united-kingdom.png" alt=""></li>
-                <li v-else-if="tvshow.original_language === 'it'"><span class="tvshow-info">Language:</span> <img src="../assets/flag-italy.png" alt=""></li>
+                <li v-else-if="tvshow.original_language === 'it'"><span class="tvshow-info">LIngua:</span> <img src="../assets/flag-italy.png" alt=""></li>
                 <li v-else><span class="tvshow-info">Foreing Language</span> <img src="../assets/white-flag.png" alt=""></li>
                 <li><span class="movie-info">Note:</span><i class="fas fa-star" v-for="i in getScore()" :key="'star'+i"></i><i class="far fa-star ciccio" v-for="i in getEmptyStar()" :key="'emptystar'+i"></i></li>
             </ul>
